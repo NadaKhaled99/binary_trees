@@ -18,10 +18,10 @@ static int print_t(const binary_tree_t *tree, int offset, int depth, char **s)
 	if (!tree)
 		return (0);
 	is_left = (tree->parent && tree->parent->left == tree);
-	width = sprintf(b, "(%03d)", tree->n);
+	width = sprintf(p, "(%03d)", tree->n);
 	left = print_t(tree->left, offset, depth + 1, s);
 	right = print_t(tree->right, offset + left + width, depth + 1, s);
-	for (j = 0; i < width; j++)
+	for (j = 0; j < width; j++)
 		s[depth][offset + left + j] = p[j];
 	if (depth && is_left)
 	{
